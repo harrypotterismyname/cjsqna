@@ -60,16 +60,16 @@ LANGUAGES = (('en', 'English'),)
 
 # Absolute path to the directory that holds uploaded media
 # Example: "/home/media/media.lawrence.com/"
-# MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'askbot', 'upfiles')
-# MEDIA_URL = '/upfiles/'
-# STATIC_URL = '/static/'#this must be different from MEDIA_URL
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'askbot', 'upfiles')
+MEDIA_URL = '/upfiles/'
+STATIC_URL = '/static/'#this must be different from MEDIA_URL
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # Make up some unique string, and don't share it with anybody.
 SECRET_KEY = '73614869092156a77cbc961ea1bed95f'
@@ -251,10 +251,12 @@ AVATAR_AUTO_GENERATE_SIZES = (16, 32, 48, 128) #change if avatars are sized diff
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static/')
-STATIC_URL = '/static/'
+STATIC_URL = '/m/'
 
 MEDIA_ROOT = os.path.join(ROOT_DIR, 'static/media')
-MEDIA_URL = '/static/media/'
+MEDIA_URL = '/m/media/'
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+ASKBOT_SELF_TEST = False
