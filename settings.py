@@ -8,7 +8,7 @@ import dj_database_url
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), '.')
+ROOT_DIR = os.path.join(os.path.dirname(__file__))
 
 #this line is added so that we can import pre-packaged askbot dependencies
 ASKBOT_ROOT = os.path.abspath(os.path.dirname(askbot.__file__))
@@ -60,16 +60,16 @@ LANGUAGES = (('en', 'English'),)
 
 # Absolute path to the directory that holds uploaded media
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'askbot', 'upfiles')
-MEDIA_URL = '/upfiles/'
-STATIC_URL = '/static/'#this must be different from MEDIA_URL
+# MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'askbot', 'upfiles')
+# MEDIA_URL = '/upfiles/'
+# STATIC_URL = '/static/'#this must be different from MEDIA_URL
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+# ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # Make up some unique string, and don't share it with anybody.
 SECRET_KEY = '73614869092156a77cbc961ea1bed95f'
