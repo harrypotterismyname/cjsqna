@@ -10,7 +10,7 @@ module_name = os.path.basename(current_directory)
 
 sys.path.append(parent_directory)
 sys.path.append(current_directory)
-os.environ['DJANGO_SETTINGS_MODULE'] = '%s.settings' % module_name
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
 from django.core.wsgi import get_wsgi_application
 try:
