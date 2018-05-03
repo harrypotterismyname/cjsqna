@@ -4,6 +4,8 @@ import logging
 import askbot
 import site
 import sys
+import dj_database_url
+
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 #this line is added so that we can import pre-packaged askbot dependencies
@@ -21,18 +23,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'ask',                      # Or path to database file if using sqlite3.
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': '123456',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-        'TEST_CHARSET': 'utf8',              # Setting the character set and collation to utf-8
-        'TEST_COLLATION': 'utf8_general_ci', # is necessary for MySQL tests to work properly.
-    }
-}
+DATABASES = {}
+
+if os.environ.get('DATABASE_URL') is not None:
+    DATABASES = {'default': dj_database_url.parse(os.environ['DATABASE_URL'])}
 
 #outgoing mail server settings
 SERVER_EMAIL = ''
