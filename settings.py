@@ -8,6 +8,8 @@ import dj_database_url
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
+ROOT_DIR = os.path.join(os.path.dirname(__file__), '.')
+
 #this line is added so that we can import pre-packaged askbot dependencies
 ASKBOT_ROOT = os.path.abspath(os.path.dirname(askbot.__file__))
 site.addsitedir(os.path.join(ASKBOT_ROOT, 'deps'))
@@ -247,3 +249,12 @@ VERIFIER_EXPIRE_DAYS = 3
 AVATAR_AUTO_GENERATE_SIZES = (16, 32, 48, 128) #change if avatars are sized differently
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static/')
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'static/media')
+MEDIA_URL = '/static/media/'
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
