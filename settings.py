@@ -251,10 +251,10 @@ AVATAR_AUTO_GENERATE_SIZES = (16, 32, 48, 128) #change if avatars are sized diff
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static/')
-STATIC_URL = '/m/'
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(ROOT_DIR, 'static/media')
-MEDIA_URL = '/m/media/'
+MEDIA_URL = '/static/media/'
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
