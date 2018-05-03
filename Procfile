@@ -1,1 +1,1 @@
-web: gunicorn askbot.wsgi:application --log-level=info
+web: gunicorn wsgi:application --log-level=info
